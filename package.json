@@ -3,14 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npm run makeDist && npm run buildIndex",
+    "start": "npm run makeDist && npm run copyAssets && npm run buildAll",
+    "buildAll": "npm run buildIndex && npm run buildVideos",
     "makeDist": "mkdir -p dist",
-    "buildIndex": "./node_modules/.bin/handlebars settings.json < index.hbs > dist/index.html"
+    "copyAssets": "cp -R assets dist",
+    "buildIndex": "./node_modules/.bin/handlebars settings.json < index.hbs > dist/index.html",
+    "buildVideos": "./node_modules/.bin/handlebars settings.json < videos.hbs > dist/videos.html",
+    "watch": "nodemon -e hbs --exec \"npm run buildAll\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "handlebars-cmd": "^0.1.4",
     "normalize.css": "^7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
