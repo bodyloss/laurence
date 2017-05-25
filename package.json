@@ -2,13 +2,15 @@
   "name": "laurance",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run makeDist && npm run buildIndex",
+    "makeDist": "mkdir -p dist",
+    "buildIndex": "./node_modules/.bin/handlebars settings.json < index.hbs > dist/index.html"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "handlebars-cmd": "^0.1.4",
     "normalize.css": "^7.0.0"
   }
 }

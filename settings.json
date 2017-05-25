@@ -1,0 +1,10 @@
+{
+    "test": "hello world",
+    "videos": [
+      {
+        "name": "name",
+        "cover": "someImg.png",
+        "vimeoLink": "http://vimeo.com/1298371"
+      }
+    ]
+}
