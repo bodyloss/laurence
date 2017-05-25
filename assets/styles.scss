@@ -1,0 +1,111 @@
+/*
+  TODO:
+  Download font
+  Align menus at top with base-line
+  Embed player
+  Reduce padding-top of .content on phone
+
+ */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #a60000;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+$header-size: 50px;
+
+.container {
+  margin-top: 10px;
+
+  .header {
+    div {
+      display: inline-block;
+    }
+
+    .header-left {
+      font-size: $header-size;
+      font-weight: bold;
+      float: left;
+      height: $header-size;
+    }
+
+    .header-right {
+      height: $header-size;
+      font-size: $header-size / 2;
+      float: right;
+
+      a.link-any-other, a.link-videos {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  $content-padding: 60px;
+  .content {
+    clear: both;
+    padding: $content-padding 0 $content-padding;
+
+    .video-player {
+      height: 600px;
+      width: 800px;
+      background: black;
+      margin: 0 auto;
+    }
+
+    .videos {
+      margin: 0 auto;
+
+      .video {
+        height: 400px;
+        width: 400px;
+        display: inline-block;
+        position: relative;
+        margin: 20px;
+
+        .video-tooltip {
+          display: none;
+          position: relative;
+
+        }
+      }
+
+      .video:hover > .video-tooltip {
+        display: block;
+      }
+    }
+  }
+
+  .footer {
+    text-align: center;
+
+    .email {
+      font-size: 17px;
+    }
+
+    .social {
+      img {
+        $size: 30px;
+        height: $size;
+        width: $size;
+      }
+
+      margin-left: 5px;
+    }
+
+  }
+}

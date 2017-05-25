@@ -1,0 +1,71 @@
+/*
+  TODO:
+  Download font
+  Align menus at top with base-line
+  Embed player
+  Reduce padding-top of .content on phone
+
+ */
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #a60000;
+  color: black; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+.container {
+  margin: 0 auto; }
+
+.container {
+  margin-top: 10px; }
+  .container .header div {
+    display: inline-block; }
+  .container .header .header-left {
+    font-size: 50px;
+    font-weight: bold;
+    float: left;
+    height: 50px; }
+  .container .header .header-right {
+    height: 50px;
+    font-size: 25px;
+    float: right; }
+    .container .header .header-right a.link-any-other, .container .header .header-right a.link-videos {
+      margin-right: 10px; }
+  .container .content {
+    clear: both;
+    padding: 60px 0 60px; }
+    .container .content .video-player {
+      height: 600px;
+      width: 800px;
+      background: black;
+      margin: 0 auto; }
+    .container .content .videos {
+      margin: 0 auto; }
+      .container .content .videos .video {
+        height: 400px;
+        width: 400px;
+        display: inline-block;
+        position: relative;
+        margin: 20px; }
+        .container .content .videos .video .video-tooltip {
+          display: none;
+          position: relative; }
+      .container .content .videos .video:hover > .video-tooltip {
+        display: block; }
+  .container .footer {
+    text-align: center; }
+    .container .footer .email {
+      font-size: 17px; }
+    .container .footer .social {
+      margin-left: 5px; }
+      .container .footer .social img {
+        height: 30px;
+        width: 30px; }
+
+/*# sourceMappingURL=styles.css.map */
