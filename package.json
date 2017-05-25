@@ -9,7 +9,7 @@
     "copyAssets": "cp -R assets dist",
     "buildIndex": "./node_modules/.bin/handlebars settings.json < index.hbs > dist/index.html",
     "buildVideos": "./node_modules/.bin/handlebars settings.json < videos.hbs > dist/videos.html",
-    "watch": "nodemon -e hbs --exec \"npm run buildAll\""
+    "watch": "nodemon -e hbs,json --exec \"npm run buildAll\""
   },
   "author": "",
   "license": "ISC",

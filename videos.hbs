@@ -4,16 +4,17 @@
 
 
 <div class="videos">
-    <div class="video" style="background: black">
+    {{#each videos}}
+        <a href="{{vimeoLink}}" target="_blank">
+            <div class="video">
+                <img class="video-image" src="{{cover}}">
 
-        <div class="video-tooltip">
-            This is the title text
-        </div>
-    </div>
-
-    <div class="video" style="background: black"></div>
-    <div class="video" style="background: black"></div>
-    <div class="video" style="background: black"></div>
+                <div class="video-tooltip">
+                    {{name}}
+                </div>
+            </div>
+        </a>
+    {{/each}}
 </div>
 
 

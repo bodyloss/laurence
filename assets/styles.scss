@@ -4,8 +4,13 @@
   Align menus at top with base-line
   Embed player
   Reduce padding-top of .content on phone
+  Get assets to copy on change
+  Fix hover effect to not reposition
+  index.html vimeo embed - fluid width 90% and fix height to be in proportion
 
  */
+
+$opacity: 1;
 
 * {
   padding: 0;
@@ -16,6 +21,11 @@ body {
   font-family: 'Raleway', sans-serif;
   background: #a60000;
   color: black;
+}
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
 }
 
 a {
@@ -58,34 +68,61 @@ $header-size: 50px;
   $content-padding: 60px;
   .content {
     clear: both;
+    width: 100%;
     padding: $content-padding 0 $content-padding;
 
     .video-player {
-      height: 600px;
-      width: 800px;
-      background: black;
+      width: 90%;
       margin: 0 auto;
     }
 
     .videos {
       margin: 0 auto;
 
+      $ratio: 46px;
+      $tooltip-height: 150px;
+
       .video {
-        height: 400px;
-        width: 400px;
+        height: 9 * $ratio;
+        width: 16 * $ratio;
+
+        .video-image {
+          height: 100%;
+          width: 100%;
+        }
+
         display: inline-block;
         position: relative;
-        margin: 20px;
+        margin: 0 20px 20px 20px;
 
         .video-tooltip {
+          $font-size: 20px;
+          $padding: ($tooltip-height / 2) - $font-size;
           display: none;
-          position: relative;
-
+          position: absolute;
+          margin-top: $tooltip-height * -1;
+          background: white;
+          height: $tooltip-height - $padding;
+          padding-top: $padding;
+          text-align: center;
+          width: 100%;
+          opacity: $opacity;
+          font-size: $font-size;
         }
       }
 
       .video:hover > .video-tooltip {
         display: block;
+        -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 0.5s; /* Firefox < 16 */
+        -ms-animation: fadein 0.5s; /* Internet Explorer */
+        -o-animation: fadein 0.5s; /* Opera < 12.1 */
+        animation: fadein 0.5s;
+      }
+
+      .video:hover {
+        margin-bottom: $tooltip-height * -1;
+        transform: scale(1.01);
       }
     }
   }
@@ -107,5 +144,35 @@ $header-size: 50px;
       margin-left: 5px;
     }
 
+  }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: $opacity; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: $opacity; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: $opacity; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: $opacity; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
   }
 }

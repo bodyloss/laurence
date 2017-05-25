@@ -2,9 +2,24 @@
     "test": "hello world",
     "videos": [
       {
-        "name": "name",
-        "cover": "someImg.png",
-        "vimeoLink": "http://vimeo.com/1298371"
+        "name": "By any other name",
+        "cover": "assets/BAON-min.png",
+        "vimeoLink": "https://vimeo.com/190077967"
+      },
+      {
+        "name": "Garden/Orchard (WIP)",
+        "cover": "assets/GardenOrchard-min.png",
+        "vimeoLink": "https://vimeo.com/202314337"
+      },
+      {
+        "name": "Berlin Iskeletory",
+        "cover": "assets/BerlinIskeletory-min.png",
+        "vimeoLink": "https://vimeo.com/158181731"
+      },
+      {
+        "name": "Habitual",
+        "cover": "assets/Habitual-min.png",
+        "vimeoLink": "https://vimeo.com/211680020"
       }
     ]
 }
